@@ -1,3 +1,3 @@
-# billang_add_bills_feature
+# Add Bills Feature
 
 Developer: Romar Castro
