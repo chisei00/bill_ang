@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -78,9 +77,10 @@ class Home extends StatelessWidget {
         icon: SvgPicture.asset("icons/Notification.svg", height: 30))
       ],
       ),
-    body: Column(
+    body: Column( 
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
+        Container( //date and user Greetings
           alignment: Alignment.centerLeft,
           margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
           padding: const EdgeInsets.fromLTRB(10, 0, 0, 1),
@@ -105,15 +105,17 @@ class Home extends StatelessWidget {
             ),
           ),
         ),
-        Container(
-          height: 278,
+        Container( // board for the dashboard
+          height: 340,
           width: 372,
+          padding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
+          margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25),
             gradient: const LinearGradient(
               colors:[
-                Color.fromARGB(255, 151, 151, 151),
-                Color.fromARGB(255, 151, 151, 151),
+                Color(0xFFCDCDCD),
+                Color(0xFFCDCDCD),
                 Color.fromARGB(0, 121, 121, 121)
               ],
               stops: [0.1, 0.50 ,0.90],
@@ -121,65 +123,310 @@ class Home extends StatelessWidget {
               end: Alignment.bottomCenter,
             ),
           ),
-           child: Column(
+           child: Column( // Dashboard
+           crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                alignment: Alignment.topLeft,
-                margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                child: Padding(
-                  padding: EdgeInsets.fromLTRB(10, 5, 0, 0), 
-                  child:Text(
-                  '₱10,000',
-                    style: GoogleFonts.inter(
-                    fontSize: 40,
-                    fontWeight: FontWeight.w900
-                  ), //GoogleFonts
-                ),
+              Container( // row and container for 1st part of dashboard
+                padding:const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: 300,
+                      child:Text(
+                            'P10,000',
+                             style: GoogleFonts.inter(
+                             fontSize: 40,
+                             fontWeight: FontWeight.w900
+                       ),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.fromLTRB(0, 15, 0, 0),
+                      width: 30,
+                      height: 30,
+                      child: SvgPicture.asset("icons/eye.svg")
+                    )
+                  ],
+                )
+              ),
+              Container( // 2nd layer "Wallet Balance"
+                padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                child: Text(
+                  'Wallet Balance',
+                  style: GoogleFonts.inter(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w700
+                  ),
+                )
+              ),
+              Container( //3rd layer "Auto Cash"
+                padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                child: Text(
+                  'Auto Cash: On',
+                  style: GoogleFonts.inter(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w700,
+                    color: Color(0XFF006089)
+                  ),
+                )
+              ),
+              Container( //4th Layer "Auto Pay"
+                padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                child: Text(
+                  'Auto Payment: On',
+                  style: GoogleFonts.inter(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w700,
+                    color: Color(0xFF006089)
+                  ),
+                )
+              ),
+              Container( //5th Layer Buttons for cash in and paynow colum and row
+                padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      width: 155,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        color: Color(0xFF5FA7C6),
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.fromLTRB(20, 15, 0, 0),
+                            child: SvgPicture.asset("icons/cashin.svg", height: 18),
+                          ),
+                          Container(
+                            padding: EdgeInsets.fromLTRB(10, 9, 0, 0),
+                          child: Text(
+                            'Cash In', 
+                            style: GoogleFonts.inter(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white
+                            )
+                          )
+                          )
+                        ],
+                      ),
+                    ),
+                    Container(
+                      width: 155,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        color: Color(0xFF5FA7C6),
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.fromLTRB(20, 12, 0, 0),
+                            child: SvgPicture.asset("icons/paynow.svg", height: 20)
+                          ),
+                          Container(
+                            padding: const EdgeInsets.fromLTRB(8, 9, 0, 0),
+                            child: Text(
+                              'Pay Now', 
+                              style: GoogleFonts.inter(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white
+                              )
+                            )
+                          )
+                        ],
+                      )
+                    )
+                  ],
                 ),
               ),
-              Container(
-                alignment: Alignment.topLeft,
-                child:  Padding(
-                  padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                  child: Text(
-                    'Wallet Balance',
-                    style: GoogleFonts.inter(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600
+              Container( //6th layer Features Container
+                padding: const EdgeInsets.fromLTRB(0, 20, 0, 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.fromLTRB(0, 2, 0, 0),
+                      height: 60,
+                      width: 50,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SvgPicture.asset("icons/SendF.svg", height: 40),
+                          Text(
+                            'Send',
+                            style: GoogleFonts.inter(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                              color: const Color(0xFF006089)
+                            )
+                          )
+                        ],
+                      )
                     ),
-                  ),
-                ),
+                    Container(
+                      margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                      height: 60,
+                      width: 50,
+                      child: Column(
+                        children: [
+                          SvgPicture.asset("icons/BankF.svg", height: 38),
+                          Text(
+                            'Bank', 
+                            style: GoogleFonts.inter(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                              color: const Color(0xFF006089)
+                            ),
+                          )
+                        ],
+                      )
+                    ),
+                    Container(
+                      margin: const EdgeInsets.fromLTRB(0, 8, 0, 0),
+                      height: 60,
+                      width: 50,
+                      child: Column(
+                        children: [
+                          SvgPicture.asset("icons/LoadF.svg", height: 40),
+                          Text(
+                            'Load',
+                            style: GoogleFonts.inter(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                              color:const  Color(0xFF006089)
+                            )
+                          )
+                        ],
+                      )
+                    ),
+                    Container(
+                      margin: const EdgeInsets.fromLTRB(0, 9.8, 0, 0),
+                      height: 60,
+                      width: 50,
+                      child: Column(
+                        children: [
+                          SvgPicture.asset("icons/BillsF.svg"),
+                          Text(
+                            'Bills',
+                            style: GoogleFonts.inter(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                              color: const Color(0xFF006089)
+                            )
+                          )
+                        ],
+                      )
+                    )
+                  ],
+                )
               ),
-              Container(
-                alignment: Alignment.topLeft,
-                child:  Padding(
-                  padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                  child: Text(
-                    'Auto Cash: On',
-                    style: GoogleFonts.inter(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xFF006089)
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                alignment: Alignment.topLeft,
-                child:  Padding(
-                  padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                  child: Text(
-                    'Auto Payment: On',
-                    style: GoogleFonts.inter(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xFF006089)
-                    ),
-                  ),
-                ),
+              Container( // 7th Layer view all services
+                alignment: Alignment.center,
+                child: Text(
+                  'View All Services',
+                  style: GoogleFonts.inter(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w700,
+                    color: const Color(0xFF006089)
+                  )
+                )
               ),
             ],
            ),
+        ),
+        Container( // Merchant Slider
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+            Container(
+              padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
+              child: Text(
+              'Merchants', 
+              style: GoogleFonts.inter(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: const Color(0xFF2C94C1)
+              )
+             )
+            ),
+            Container(
+              margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+              padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+              height: 80,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Container( // merch slider 1
+                    padding: const EdgeInsets.all(5),
+                    margin: const EdgeInsets.fromLTRB(0, 0, 5, 0),
+                    height: 70,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: const Color(0xFFDDDDDD)
+                    ),
+                  ),
+                  Container( //merch slider 2
+                    padding: const EdgeInsets.all(5),
+                    margin: const EdgeInsets.fromLTRB(5, 0, 5, 0),
+                    height: 70,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: const Color(0xFFDDDDDD)
+                    ),
+                  ),
+                  Container( //merch slider 3
+                    padding: const EdgeInsets.all(5),
+                    margin: const EdgeInsets.fromLTRB(5, 0, 5, 0),
+                    height: 70,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: const Color(0xFFDDDDDD)
+                    ),
+                  ),
+                  Container( //merch slider 4
+                    padding: const EdgeInsets.all(5),
+                    margin: const EdgeInsets.fromLTRB(5, 0, 5, 0),
+                    height: 70,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: const Color(0xFFDDDDDD)
+                    ),
+                  ),
+                  Container( //merch slider 5
+                    padding: const EdgeInsets.all(5),
+                    margin: const EdgeInsets.fromLTRB(5, 0, 5, 0),
+                    height: 70,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: const Color(0xFFDDDDDD)
+                    ),
+                  ),
+                  Container( //merch slider 6
+                    padding: const EdgeInsets.all(5),
+                    margin: const EdgeInsets.fromLTRB(5, 0, 5, 0),
+                    height: 70,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: const Color(0xFFDDDDDD)
+                    ),
+                  ),
+                ],
+              )
+            )
+          ],)
         ),
       ],
     ),
