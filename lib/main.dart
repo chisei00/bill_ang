@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       useInheritedMediaQuery: true,
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
-      title: 'Flutter Demo',
+      title: 'BILL-ANG',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -106,7 +106,7 @@ class Home extends StatelessWidget {
           ),
         ),
         Container( // board for the dashboard
-          height: 340,
+          height: 295,
           width: 372,
           padding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
           margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
@@ -115,10 +115,9 @@ class Home extends StatelessWidget {
             gradient: const LinearGradient(
               colors:[
                 Color(0xFFCDCDCD),
-                Color(0xFFCDCDCD),
                 Color.fromARGB(0, 121, 121, 121)
               ],
-              stops: [0.1, 0.50 ,0.90],
+              stops: [0.1 ,0.75],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
             ),
@@ -131,12 +130,12 @@ class Home extends StatelessWidget {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
+                    SizedBox(
                       width: 300,
                       child:Text(
-                            'P10,000',
+                            '₱10,000',
                              style: GoogleFonts.inter(
-                             fontSize: 40,
+                             fontSize: 45,
                              fontWeight: FontWeight.w900
                        ),
                       ),
@@ -155,7 +154,7 @@ class Home extends StatelessWidget {
                 child: Text(
                   'Wallet Balance',
                   style: GoogleFonts.inter(
-                    fontSize: 15,
+                    fontSize: 12,
                     fontWeight: FontWeight.w700
                   ),
                 )
@@ -165,7 +164,7 @@ class Home extends StatelessWidget {
                 child: Text(
                   'Auto Cash: On',
                   style: GoogleFonts.inter(
-                    fontSize: 15,
+                    fontSize: 12,
                     fontWeight: FontWeight.w700,
                     color: Color(0XFF006089)
                   ),
@@ -176,19 +175,19 @@ class Home extends StatelessWidget {
                 child: Text(
                   'Auto Payment: On',
                   style: GoogleFonts.inter(
-                    fontSize: 15,
+                    fontSize: 12,
                     fontWeight: FontWeight.w700,
                     color: Color(0xFF006089)
                   ),
                 )
               ),
               Container( //5th Layer Buttons for cash in and paynow colum and row
-                padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      width: 155,
+                      width: 168,
                       height: 50,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(25),
@@ -198,15 +197,15 @@ class Home extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            padding: EdgeInsets.fromLTRB(20, 15, 0, 0),
+                            padding: const EdgeInsets.fromLTRB(20, 15, 0, 0),
                             child: SvgPicture.asset("icons/cashin.svg", height: 18),
                           ),
                           Container(
-                            padding: EdgeInsets.fromLTRB(10, 9, 0, 0),
+                            margin: const EdgeInsets.fromLTRB(20, 9, 0, 0),
                           child: Text(
                             'Cash In', 
                             style: GoogleFonts.inter(
-                              fontSize: 20,
+                              fontSize: 21,
                               fontWeight: FontWeight.w600,
                               color: Colors.white
                             )
@@ -216,7 +215,8 @@ class Home extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      width: 155,
+                      margin: const EdgeInsets.fromLTRB(14, 0, 0, 0),
+                      width: 168,
                       height: 50,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(25),
@@ -230,11 +230,11 @@ class Home extends StatelessWidget {
                             child: SvgPicture.asset("icons/paynow.svg", height: 20)
                           ),
                           Container(
-                            padding: const EdgeInsets.fromLTRB(8, 9, 0, 0),
+                            margin: const EdgeInsets.fromLTRB(15, 9, 0, 0),
                             child: Text(
                               'Pay Now', 
                               style: GoogleFonts.inter(
-                                fontSize: 20,
+                                fontSize: 21,
                                 fontWeight: FontWeight.w600,
                                 color: Colors.white
                               )
@@ -247,12 +247,14 @@ class Home extends StatelessWidget {
                 ),
               ),
               Container( //6th layer Features Container
-                padding: const EdgeInsets.fromLTRB(0, 20, 0, 10),
+                padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      margin: const EdgeInsets.fromLTRB(0, 2, 0, 0),
+                      // margin: const EdgeInsets.fromLTRB(0, 6, 0, 0),
+                      margin: const EdgeInsets.fromLTRB(22, 10, 15, 10),
                       height: 60,
                       width: 50,
                       child: Column(
@@ -271,7 +273,8 @@ class Home extends StatelessWidget {
                       )
                     ),
                     Container(
-                      margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                      // margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                      margin: const EdgeInsets.fromLTRB(22, 10, 15, 10),
                       height: 60,
                       width: 50,
                       child: Column(
@@ -289,7 +292,8 @@ class Home extends StatelessWidget {
                       )
                     ),
                     Container(
-                      margin: const EdgeInsets.fromLTRB(0, 8, 0, 0),
+                      // margin: const EdgeInsets.fromLTRB(0, 8, 0, 0),
+                      margin: const EdgeInsets.fromLTRB(22, 10, 15, 10),
                       height: 60,
                       width: 50,
                       child: Column(
@@ -307,7 +311,8 @@ class Home extends StatelessWidget {
                       )
                     ),
                     Container(
-                      margin: const EdgeInsets.fromLTRB(0, 9.8, 0, 0),
+                      // margin: const EdgeInsets.fromLTRB(0, 9.8, 0, 0),
+                      margin: const EdgeInsets.fromLTRB(22, 10, 15, 10),
                       height: 60,
                       width: 50,
                       child: Column(
@@ -332,8 +337,8 @@ class Home extends StatelessWidget {
                 child: Text(
                   'View All Services',
                   style: GoogleFonts.inter(
-                    fontSize: 13,
-                    fontWeight: FontWeight.w700,
+                    fontSize: 10,
+                    fontWeight: FontWeight.w800,
                     color: const Color(0xFF006089)
                   )
                 )
@@ -346,7 +351,7 @@ class Home extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
             Container(
-              padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
+              padding: const EdgeInsets.fromLTRB(10, 0, 0, 5),
               child: Text(
               'Merchants', 
               style: GoogleFonts.inter(
@@ -359,7 +364,7 @@ class Home extends StatelessWidget {
             Container(
               margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
               padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
-              height: 80,
+              height: 74,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
@@ -370,8 +375,27 @@ class Home extends StatelessWidget {
                     width: 100,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(25),
-                      color: const Color(0xFFDDDDDD)
+                      color: const Color(0xFFEEEEEE)
                     ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(padding: EdgeInsets.fromLTRB( 0, 6, 0, 0,),
+                        child: SvgPicture.asset("icons/kurents.svg", height:34)
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 3, 0, 0),
+                          child: Text(
+                          'Electricity',
+                          style: GoogleFonts.inter(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w600,
+                            color: const Color(0xFF006089)
+                          )
+                        )
+                        )
+                      ],
+                    )
                   ),
                   Container( //merch slider 2
                     padding: const EdgeInsets.all(5),
@@ -380,8 +404,28 @@ class Home extends StatelessWidget {
                     width: 100,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(25),
-                      color: const Color(0xFFDDDDDD)
+                      color: const Color(0xFFEEEEEE)
                     ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 6, 0, 0),
+                          child: SvgPicture.asset("icons/WaterSlide.svg", height:34)
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 3, 0, 0),
+                          child: Text(
+                          'Water',
+                          style: GoogleFonts.inter(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w600,
+                            color: const Color(0xFF006089)
+                          )
+                        )
+                        )
+                      ],
+                    )
                   ),
                   Container( //merch slider 3
                     padding: const EdgeInsets.all(5),
@@ -390,7 +434,25 @@ class Home extends StatelessWidget {
                     width: 100,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(25),
-                      color: const Color(0xFFDDDDDD)
+                      color: const Color(0xFFEEEEEE)
+                    ),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 6, 0, 0),
+                        child:SvgPicture.asset("icons/InternetSlide.svg", height: 34)
+                        ),
+                        Padding(
+                          padding:const EdgeInsets.fromLTRB( 0, 3, 0, 0),
+                        child: Text(
+                          'Internet',
+                          style: GoogleFonts.inter(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w600,
+                            color:const Color(0xFF006089)
+                          )
+                        ))
+                      ],
                     ),
                   ),
                   Container( //merch slider 4
@@ -400,8 +462,26 @@ class Home extends StatelessWidget {
                     width: 100,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(25),
-                      color: const Color(0xFFDDDDDD)
+                      color: const Color(0xFFEEEEEE)
                     ),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 6, 0, 0),
+                          child: SvgPicture.asset("icons/TranspoSlide.svg", height: 34)
+                        ),
+                        Padding(
+                          padding:const EdgeInsets.fromLTRB(0, 3, 0, 0),
+                          child: Text(
+                            'Transpo', 
+                            style: GoogleFonts.inter(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w600,
+                              color: const Color(0xFF006089)
+                            )
+                          ))
+                      ],
+                    )
                   ),
                   Container( //merch slider 5
                     padding: const EdgeInsets.all(5),
@@ -410,7 +490,25 @@ class Home extends StatelessWidget {
                     width: 100,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(25),
-                      color: const Color(0xFFDDDDDD)
+                      color: const Color(0xFFEEEEEE)
+                    ),
+                    child: Column(
+                      children: [
+                        Padding(
+                        padding: const EdgeInsets.fromLTRB( 7, 6, 0, 0),
+                        child: SvgPicture.asset("icons/gameSlide.svg", height: 34)
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 3, 0, 0),
+                          child: Text(
+                            'Games',
+                            style: GoogleFonts.inter(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w600,
+                              color: const Color(0xFF006089)
+                            )
+                          ) )
+                      ],
                     ),
                   ),
                   Container( //merch slider 6
@@ -420,13 +518,69 @@ class Home extends StatelessWidget {
                     width: 100,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(25),
-                      color: const Color(0xFFDDDDDD)
+                      color: const Color(0xFFEEEEEE)
                     ),
+                    child: Column(
+                      children: [
+                        Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 22, 0, 0),
+                        child: SvgPicture.asset("icons/seemore.svg", width: 58,)
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                          child: Text(
+                            'See More', 
+                            style: GoogleFonts.inter(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w600,
+                              color:const Color(0xFF006089)
+                            )
+                          ))
+                      ],
+                    )
                   ),
                 ],
               )
             )
           ],)
+        ),
+        Container( //8th layer link your account
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                padding: const EdgeInsets.fromLTRB(15, 10, 0, 5),
+                child: Text(
+                  'Link Your Account', 
+                  style: GoogleFonts.inter(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                    color: const Color(0xFF2C94C1)
+                  )
+                )
+              ),
+              Container(
+              margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+              padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+              height: 74,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Container(
+                    padding: const EdgeInsets.all(5),
+                    margin: const EdgeInsets.fromLTRB(0, 0, 5, 0),
+                    height: 74,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: const Color(0xFFEEEEEE)
+                    ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          )
         ),
       ],
     ),
