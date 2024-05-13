@@ -77,7 +77,12 @@ class Home extends StatelessWidget {
         icon: SvgPicture.asset("icons/Notification.svg", height: 30))
       ],
       ),
-    body: Column( 
+
+
+  body: ListView(
+    children: [
+      Column( //top1
+
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container( //date and user Greetings
@@ -575,15 +580,218 @@ class Home extends StatelessWidget {
                       borderRadius: BorderRadius.circular(25),
                       color: const Color(0xFFEEEEEE)
                     ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(0),
+                          child: Image.asset("icons/GcashSingle.png", 
+                          width: 50,
+                          )
+                        ),
+                      ],
+                    )
                     ),
+                    Container(
+                      padding: const EdgeInsets.all(5),
+                      margin: const EdgeInsets.fromLTRB(5, 0, 5, 0),
+                      height: 74,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        color:  const Color(0xFFEEEEEE)
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                            child: Image.asset("icons/maya.png",
+                            width: 80,
+                            ),
+                          ),
+                        ],
+                      )
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(5),
+                      margin: const EdgeInsets.fromLTRB(5, 0, 5, 0),
+                      height: 74,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        color: const Color(0xFFEEEEEE)
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                            child: Image.asset("icons/mcard.png", 
+                            width: 60,
+                            fit: BoxFit.fill,)
+                          )
+                        ],
+                      )
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(5),
+                      margin: const EdgeInsets.fromLTRB(5 ,0, 5, 0),
+                      height: 74,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        color: const Color(0xFFEEEEEE)
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(0),
+                            child: Image.asset("icons/BDO.png",
+                            width: 70,
+                            fit: BoxFit.fill,
+                            ),
+                          ),
+                        ] ,
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(5),
+                      margin: const EdgeInsets.fromLTRB(5, 0, 5, 0),
+                      height: 74,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        color: const Color(0xFFEEEEEE)
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(0),
+                            child: Image.asset("icons/BPI.png",
+                            width: 70,
+                            fit: BoxFit.fill
+                            )
+                          )
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(5),
+                      margin: const EdgeInsets.fromLTRB(5, 0, 5, 0),
+                      height: 74,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        color: const Color(0xFFEEEEEE)
+                      ),
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(0, 22, 0, 0),
+                            child: SvgPicture.asset("icons/seemore.svg",
+                            width: 58,
+                            )
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                            child: Text(
+                              'See More',
+                              style: GoogleFonts.inter(
+                                fontSize: 13,
+                                fontWeight: FontWeight.w600,
+                                color: const Color(0xFF006089)
+                              )
+                            ),
+                          )
+                        ],
+                      )
+                    )
                   ],
                 ),
               ),
             ],
           )
         ),
+        Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(15, 10, 0, 5),
+                    child: Text(
+                      'Upcoming Due Dates',
+                      style: GoogleFonts.inter(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                        color: const Color(0xFF2C94C1),
+                      )
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.fromLTRB(15, 10, 0, 5),
+                    margin: const EdgeInsets.fromLTRB(90, 10, 0, 0),
+                    child: Text(
+                      'View All',
+                      style: GoogleFonts.inter(
+                        fontSize: 10,
+                        fontWeight: FontWeight.w700,
+                        color: const Color(0xFF006089)
+                      )
+                    )
+                  )
+                ],
+              ),
+              Container(
+                margin: const EdgeInsets.fromLTRB(0, 5, 0, 5),
+                height: 70,
+                width: 360,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: const Color(0xFFEEEEEE)
+                ),
+              ),
+                Container(
+                margin: const EdgeInsets.fromLTRB(0, 5, 0, 5),
+                height: 70,
+                width: 360,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: const Color(0xFFEEEEEE)
+                ),
+              ),
+                 Container(
+                margin: const EdgeInsets.fromLTRB(0, 5, 0, 5),
+                height: 70,
+                width: 360,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: const Color(0xFFEEEEEE)
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.fromLTRB(0, 5, 0, 5),
+                height: 70,
+                width: 360,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: const Color(0xFFEEEEEE)
+                ),
+              )
+            ],
+          )
+        )
       ],
     ),
+      ],
+
+    ),
+   
     );
   }
 }
