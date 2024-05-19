@@ -1,15 +1,24 @@
+/* Authored by: Eric J. Tan Jr.
+Company: Jerk Enterprises
+Project: Bill-Ang
+Feature: [BLNG-28] Profile overview
+Description: This page is where the user navigates the hamburger menu to settings, profile, privacy, etc.
+ */
+
 import 'package:flutter/material.dart';
 import '../../core/app_export.dart';
 import '../../widgets/app_bar/appbar_leading_image.dart';
 import '../../widgets/app_bar/appbar_trailing_image.dart';
 import '../../widgets/app_bar/custom_app_bar.dart';
 
+// Hamburger Page Screen Widget
 class HamburgerPageScreen extends StatelessWidget {
   const HamburgerPageScreen({Key? key})
       : super(
     key: key,
   );
 
+  // Build method
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -233,6 +242,7 @@ class HamburgerPageScreen extends StatelessWidget {
     );
   }
 
+  // Custom App Bar
   PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
       height: 82.v,
@@ -254,6 +264,7 @@ class HamburgerPageScreen extends StatelessWidget {
     );
   }
 
+    // Actions Section
   Widget _buildActionItem(
       BuildContext context, {
         required String label,
