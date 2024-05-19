@@ -1,18 +1,29 @@
+/* Authored by: Eric J. Tan Jr.
+Company: Jerk Enterprises
+Project: Bill-Ang
+Feature: [FEATURECODE-002] Profile details
+Description: This page is where the user can edit their profile, whether it be their name, email, birthdate, etc.
+ */
+
 import 'package:flutter/material.dart';
 import '../../core/app_export.dart';
 import '../../widgets/app_bar/appbar_leading_image.dart';
 import '../../widgets/app_bar/appbar_title.dart';
 import '../../widgets/app_bar/appbar_trailing_iconbutton.dart';
 import '../../widgets/app_bar/custom_app_bar.dart';
-import '../../widgets/custom_text_form_field.dart'; // ignore_for_file: must_be_immutable
+import '../../widgets/custom_text_form_field.dart';
 
-// ignore_for_file: must_be_immutable
-class ProfileDetailsScreen extends StatelessWidget {
+class ProfileDetailsScreen extends StatefulWidget {
   ProfileDetailsScreen({Key? key})
       : super(
           key: key,
         );
 
+  @override
+  State<ProfileDetailsScreen> createState() => _ProfileDetailsScreenState();
+}
+
+class _ProfileDetailsScreenState extends State<ProfileDetailsScreen> {
   TextEditingController nameController = TextEditingController();
 
   TextEditingController emailController = TextEditingController();
@@ -25,7 +36,6 @@ class ProfileDetailsScreen extends StatelessWidget {
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  // Define selectedDate variable to store the selected date
   DateTime? selectedDate;
 
   @override
@@ -157,7 +167,6 @@ class ProfileDetailsScreen extends StatelessWidget {
     );
   }
 
-  /// Section Widget
   PreferredSizeWidget _buildAppbar(BuildContext context) {
     return CustomAppBar(
       leadingWidth: 33.h,
@@ -190,7 +199,6 @@ class ProfileDetailsScreen extends StatelessWidget {
     );
   }
 
-  /// Section Widget
   Widget _buildColumnnickname(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(right: 7.h),
@@ -218,7 +226,6 @@ class ProfileDetailsScreen extends StatelessWidget {
     );
   }
 
-  /// Section Widget
   Widget _buildColumnemailaddr(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(right: 7.h),
@@ -247,7 +254,6 @@ class ProfileDetailsScreen extends StatelessWidget {
     );
   }
 
-  /// Section Widget
   Widget _buildColumncontactnu(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(right: 7.h),
@@ -268,7 +274,7 @@ class ProfileDetailsScreen extends StatelessWidget {
             child: CustomTextFormField(
               controller: contactnumbervaController,
               hintText: "09123456789",
-              textInputType: TextInputType.phone, // Set TextInputType to phone
+              textInputType: TextInputType.phone,
             ),
           )
         ],
@@ -276,7 +282,6 @@ class ProfileDetailsScreen extends StatelessWidget {
     );
   }
 
-  /// Section Widget
   Widget _buildColumnfirstname(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(right: 7.h),
@@ -303,7 +308,6 @@ class ProfileDetailsScreen extends StatelessWidget {
     );
   }
 
-  /// Section Widget
   Widget _buildColumnlastname(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(right: 7.h),
@@ -369,7 +373,7 @@ class ProfileDetailsScreen extends StatelessWidget {
                     ),
                     child: Text(
                       selectedDate != null
-                          ? "${selectedDate!.month}/${selectedDate!.day}/${selectedDate!.year}"
+                          ? "${selectedDate!.month.toString().padLeft(2, '0')}/${selectedDate!.day.toString().padLeft(2, '0')}/${selectedDate!.year}"
                           : "MM/DD/YYYY",
                       style: CustomTextStyles.bodyLargeGray700,
                     ),
@@ -389,7 +393,6 @@ class ProfileDetailsScreen extends StatelessWidget {
     );
   }
 
-  /// Function to show the date picker
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
       context: context,
@@ -399,10 +402,10 @@ class ProfileDetailsScreen extends StatelessWidget {
       builder: (BuildContext context, Widget? child) {
         return Theme(
           data: ThemeData.light().copyWith(
-            primaryColor: appTheme.lightBlue900, // Set primary color
+            primaryColor: appTheme.lightBlue900,
             colorScheme: ColorScheme.light(
-              primary: appTheme.lightBlue900, // Set primary color
-              secondary: appTheme.lightBlue900, // Set accent color
+              primary: appTheme.lightBlue900,
+              secondary: appTheme.lightBlue900,
             ),
             buttonTheme: ButtonThemeData(
               textTheme: ButtonTextTheme.primary,
@@ -413,12 +416,12 @@ class ProfileDetailsScreen extends StatelessWidget {
       },
     );
     if (picked != null && picked != selectedDate) {
-      // Update selectedDate when a date is picked
-      selectedDate = picked;
+      setState(() {
+        selectedDate = picked;
+      });
     }
   }
 
-  /// Navigates back to the previous screen.
   onTapArrowleftone(BuildContext context) {
     Navigator.pop(context);
   }
