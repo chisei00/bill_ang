@@ -755,6 +755,56 @@ class Home extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                   color: const Color(0xFFEEEEEE)
                 ),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      //image container
+                      Container(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                        child: Image.asset("icons/Netflix.png",
+                        height: 80
+                        )
+                      ),
+                      //Bill Name and Due date Container (column)
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                          child: Text(
+                            'Netflix', 
+                            style: GoogleFonts.inter(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.black,
+                            )
+                           ),
+                          ),
+                          Padding(padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                          child: Text(
+                            'Today', 
+                            style: GoogleFonts.inter(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w700,
+                              color: const Color(0xFF006089)
+                            )
+                            )
+                          ),
+                        ],
+                      ),
+                      //Amount container
+                      Container(
+                        padding: const EdgeInsets.fromLTRB(120, 14, 0, 0),
+                        child: Text(
+                          '₱550', 
+                          style: GoogleFonts.inter(
+                            fontSize: 30,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.black
+                          )
+                        )
+                      )
+                    ],
+                ),
               ),
                 Container(
                 margin: const EdgeInsets.fromLTRB(0, 5, 0, 5),
@@ -763,6 +813,56 @@ class Home extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: const Color(0xFFEEEEEE)
+                ),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      //image container
+                      Container(
+                        padding: const EdgeInsets.fromLTRB(20, 13, 28, 0),
+                        child: SvgPicture.asset("icons/kurents.svg",
+                        height: 40
+                        )
+                      ),
+                      //Bill Name and Due date Container (column)
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                          child: Text(
+                            'Electricity', 
+                            style: GoogleFonts.inter(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.black,
+                            )
+                           ),
+                          ),
+                          Padding(padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                          child: Text(
+                            'May 30, 2024', 
+                            style: GoogleFonts.inter(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w700,
+                              color: const Color(0xFF006089)
+                            )
+                            )
+                          ),
+                        ],
+                      ),
+                      //Amount container
+                      Container(
+                        padding: const EdgeInsets.fromLTRB(60, 14, 0, 0),
+                        child: Text(
+                          '₱1,234', 
+                          style: GoogleFonts.inter(
+                            fontSize: 30,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.black
+                          )
+                        )
+                      )
+                    ],
                 ),
               ),
                  Container(
@@ -773,6 +873,56 @@ class Home extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                   color: const Color(0xFFEEEEEE)
                 ),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      //image container
+                      Container(
+                        padding: const EdgeInsets.fromLTRB(20, 13, 28, 0),
+                        child: SvgPicture.asset("icons/WaterSlide.svg",
+                        height: 40
+                        )
+                      ),
+                      //Bill Name and Due date Container (column)
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
+                          child: Text(
+                            'Water', 
+                            style: GoogleFonts.inter(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.black,
+                            )
+                           ),
+                          ),
+                          Padding(padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                          child: Text(
+                            'June 1, 2024', 
+                            style: GoogleFonts.inter(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w700,
+                              color: const Color(0xFF006089)
+                            )
+                            )
+                          ),
+                        ],
+                      ),
+                      //Amount container
+                      Container(
+                        padding: const EdgeInsets.fromLTRB(120, 14, 0, 0),
+                        child: Text(
+                          '₱351', 
+                          style: GoogleFonts.inter(
+                            fontSize: 30,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.black
+                          )
+                        )
+                      )
+                    ],
+                ),
               ),
               Container(
                 margin: const EdgeInsets.fromLTRB(0, 5, 0, 5),
@@ -781,6 +931,56 @@ class Home extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: const Color(0xFFEEEEEE)
+                ),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      //image container
+                      Container(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                        child: Image.asset("icons/Spotify.png",
+                        height: 80
+                        )
+                      ),
+                      //Bill Name and Due date Container (column)
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                          child: Text(
+                            'Spotify', 
+                            style: GoogleFonts.inter(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.black,
+                            )
+                           ),
+                          ),
+                          Padding(padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                          child: Text(
+                            'May 25, 2024', 
+                            style: GoogleFonts.inter(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w700,
+                              color: const Color(0xFF006089)
+                            )
+                            )
+                          ),
+                        ],
+                      ),
+                      //Amount container
+                      Container(
+                        padding: const EdgeInsets.fromLTRB(115, 14, 0, 0),
+                        child: Text(
+                          '₱250', 
+                          style: GoogleFonts.inter(
+                            fontSize: 30,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.black
+                          )
+                        )
+                      )
+                    ],
                 ),
               )
             ],
